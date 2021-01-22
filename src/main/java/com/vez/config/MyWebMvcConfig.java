@@ -1,7 +1,9 @@
 package com.vez.config;
 
+import com.vez.aop.MyInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
@@ -23,5 +25,15 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
                 .allowedMethods("*")
                 .maxAge(1800)
                 .allowedOrigins("https://localhost:8088");
+    }
+
+    //拦截器配置
+    //addPathPatterns表示拦截路径
+    //excludePathPatterns表示排除的路径
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/addBook");
     }
 }
