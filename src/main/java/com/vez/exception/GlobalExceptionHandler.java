@@ -1,4 +1,4 @@
-package com.vez.exception.handler;
+package com.vez.exception;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
