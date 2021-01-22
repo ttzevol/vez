@@ -1,0 +1,16 @@
+#在正式环境中将采用这个配置文件
+server:
+  #  配置https证书
+  ssl:
+    key-store: sang.p12
+    key-alias: tomcathttps
+    key-password: wbw901267
+
+#  测试属性注入
+book:
+  name: java从入门到精通
+  author: wubowen
+  list:
+    - configure
+    - starter
+    - controllser

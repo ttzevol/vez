@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.vez</groupId>
+    <artifactId>vez</artifactId>
+    <version>1.0</version>
+
+<!--    springboot项目基础父依赖-->
+<!--    作用：-->
+<!--    -提供maven的默认配置-->
+<!--    -引入其他依赖的时候不需要输入版本号-->
+<!--    提供如下默认配置：-->
+<!--        -java版本默认使用1.8-->
+<!--        -编码格式默认使用utf8-->
+<!--        -默认资源过滤与插件配置-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.5.RELEASE</version>
+    </parent>
+
+<!--    设置编码格式-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+<!--        web开发相关依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+<!--        lombok依赖，自动生成常见的getter,setter,tostring方法参数-->
+<!--        idea需要安装插件lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>
