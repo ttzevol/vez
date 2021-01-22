@@ -3,6 +3,7 @@ package com.vez.controller;
 import com.vez.entity.Book;
 import com.vez.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -63,5 +64,17 @@ public class HelloControllser {
             e.printStackTrace();
         }
         return "上传失败";
+    }
+
+    /**
+     * 解决跨域问题
+     * value的值表示来自此Url的请求支持跨域
+     * maxage探测请求的有效期，这是是1800s
+     * allowHeaders表示允许的请求头，*表示所有的请求头都被允许
+     */
+    @PostMapping("/cross")
+    @CrossOrigin(value = "https://local:8080", maxAge = 1800, allowedHeaders = "*")
+    public String addBook(String name){
+        return "receive" + name;
     }
 }
