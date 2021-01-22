@@ -14,7 +14,26 @@
 #    - starter
 #    - controllser
 
-#通过这个配置的改动，我们将决定采用正式还是开发环境的配置文件
 spring:
+  #通过这个配置的改动，我们将决定采用正式还是开发环境的配置文件
   profiles:
     active: prod
+  #解决返回JSON中文乱码的问题
+  http:
+      encoding:
+        force-response: true
+  servlet:
+    #上传文件配置 一般可以不进行配置
+#    multipart:
+#      #是否开启文件上传支持
+#      enabled: true
+#      #文件写入磁盘的阈值，默认为0
+#      file-size-threshold: 0
+#      #上传文件的临时保存位置
+#      location: E:\\temp
+#      #上传的单个文件的最大大小
+#      max-file-size: 1MB
+#      #多文件上传时文件的总大小
+#      max-request-size: 10MB
+#      #文件是否延迟解析
+#      resolve-lazily: false

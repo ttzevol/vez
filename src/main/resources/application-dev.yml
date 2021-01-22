@@ -14,3 +14,10 @@ book:
     - configure
     - starter
     - controllser
+
+#解决返回JSON中文乱码的问题
+#此处注释掉是因为发现一些通用的配置仍然可以放在application.yml
+#spring:
+#  http:
+#    encoding:
+#      force-response: true
