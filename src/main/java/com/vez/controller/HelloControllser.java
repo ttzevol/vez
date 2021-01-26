@@ -28,8 +28,8 @@ public class HelloControllser {
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/");
 
     @GetMapping("/hello")
-    public String hello(){
-        return book.toString();
+    public Book hello(){
+        return book;
     }
 
     @GetMapping("/user")
